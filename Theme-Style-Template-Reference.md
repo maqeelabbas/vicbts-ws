@@ -1,0 +1,1 @@
+We have folder on root called "template-samples". It has html templates which would be reference for layout designing, I would like Copilot to reference it while create a theme/design of html components. 
