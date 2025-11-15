@@ -1,0 +1,20 @@
+<section class="metrics-showcase" aria-labelledby="metricsTitle">
+  <div class="container">
+    <div class="header">
+      <p class="eyebrow">Proven outcomes</p>
+      <h2 class="title" id="metricsTitle">Metrics that show our impact</h2>
+      <p class="subtitle">
+        We co-create measurable success plans with every partner. These metrics reflect the consistency and care we
+        bring to modern product delivery.
+      </p>
+    </div>
+
+    <div class="metrics-grid">
+      <article *ngFor="let metric of metrics" class="metric-card">
+        <h3 class="metric-value">{{ metric.value }}</h3>
+        <p class="metric-label">{{ metric.label }}</p>
+        <p class="metric-description">{{ metric.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>

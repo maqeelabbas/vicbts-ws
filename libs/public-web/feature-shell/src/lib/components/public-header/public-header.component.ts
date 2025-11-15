@@ -1,9 +1,10 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ConfigService } from '@vicbts/shared/data-access/config';
 import { NavItem } from '@vicbts/shared/models';
 import { Observable } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'lib-public-header',
@@ -16,17 +17,20 @@ export class PublicHeaderComponent implements OnInit {
   private configService = inject(ConfigService);
 
   isMenuOpen = false;
+  isScrolled = false;
   navItems$: Observable<NavItem[]> = this.configService.navItems$;
   appName = '';
   logoUrl = '';
 
   ngOnInit(): void {
-    this.configService.config$.subscribe((config) => {
-      if (config) {
-        this.appName = config.appName;
-        this.logoUrl = config.logoUrl;
-      }
-    });
+    this.configService.config$
+      .pipe(takeUntilDestroyed())
+      .subscribe((config) => {
+        if (config) {
+          this.appName = config.appName;
+          this.logoUrl = config.logoUrl;
+        }
+      });
   }
 
   toggleMenu(): void {
@@ -35,5 +39,10 @@ export class PublicHeaderComponent implements OnInit {
 
   closeMenu(): void {
     this.isMenuOpen = false;
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.isScrolled = window.scrollY > 16;
   }
 }

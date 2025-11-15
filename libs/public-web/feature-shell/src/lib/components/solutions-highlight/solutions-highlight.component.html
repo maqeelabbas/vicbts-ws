@@ -1,0 +1,48 @@
+<section class="solutions-highlight" aria-labelledby="solutionsTitle">
+  <div class="container">
+    <div class="content">
+      <div class="copy">
+        <p class="eyebrow">Strategic delivery</p>
+        <h2 class="headline" id="solutionsTitle">Solutions built to launch and scale faster</h2>
+        <p class="description">
+          We combine product strategy, design systems, and rock-solid engineering practices to deliver software that
+          accelerates revenue and delights customers. Every engagement is tailored to your workflow and tech stack.
+        </p>
+
+        <ul class="highlight-list">
+          <li *ngFor="let point of highlightPoints">
+            <div class="icon-badge" aria-hidden="true">
+              <i class="ri-check-line"></i>
+            </div>
+            <div>
+              <h3>{{ point.title }}</h3>
+              <p>{{ point.description }}</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="cta-row">
+          <a routerLink="/services" class="btn btn-primary">
+            Explore delivery playbooks
+          </a>
+          <a routerLink="/contact" class="btn btn-ghost">
+            Book a discovery call
+          </a>
+        </div>
+      </div>
+
+      <div class="visual" aria-hidden="true">
+        <div class="visual-card">
+          <span class="badge">Sprint velocity</span>
+          <h3>62%</h3>
+          <p>Average acceleration in release cadence after our engagement.</p>
+        </div>
+        <div class="visual-card alt">
+          <span class="badge">NPS</span>
+          <h3>+48</h3>
+          <p>Customer satisfaction uplift driven by UX research and design ops.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

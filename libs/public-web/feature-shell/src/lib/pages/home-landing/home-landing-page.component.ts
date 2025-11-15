@@ -4,6 +4,9 @@ import { HeroLandingComponent } from '../../components/hero-landing/hero-landing
 import { ServicesSectionComponent } from '../../components/services-section/services-section.component';
 import { TestimonialsSectionComponent } from '../../components/testimonials-section/testimonials-section.component';
 import { ContactCtaComponent } from '../../components/contact-cta/contact-cta.component';
+import { TrustedByComponent } from '../../components/trusted-by/trusted-by.component';
+import { SolutionsHighlightComponent } from '../../components/solutions-highlight/solutions-highlight.component';
+import { MetricsShowcaseComponent } from '../../components/metrics-showcase/metrics-showcase.component';
 import { SeoService } from '@vicbts/shared/util';
 
 @Component({
@@ -12,14 +15,20 @@ import { SeoService } from '@vicbts/shared/util';
   imports: [
     CommonModule,
     HeroLandingComponent,
+    TrustedByComponent,
     ServicesSectionComponent,
+    SolutionsHighlightComponent,
+    MetricsShowcaseComponent,
     TestimonialsSectionComponent,
     ContactCtaComponent,
   ],
   template: `
     <div class="home-landing-page">
       <lib-hero-landing></lib-hero-landing>
+      <lib-trusted-by></lib-trusted-by>
       <lib-services-section></lib-services-section>
+      <lib-solutions-highlight></lib-solutions-highlight>
+      <lib-metrics-showcase></lib-metrics-showcase>
       <lib-testimonials-section></lib-testimonials-section>
       <lib-contact-cta></lib-contact-cta>
     </div>
@@ -29,6 +38,7 @@ import { SeoService } from '@vicbts/shared/util';
       .home-landing-page {
         display: flex;
         flex-direction: column;
+        gap: 0;
       }
     `,
   ],

@@ -1,34 +1,78 @@
 <div class="services-page">
-  <section class="page-hero">
+  <section class="page-hero" aria-labelledby="servicesHeroTitle">
+    <div class="hero-overlay" aria-hidden="true"></div>
     <lib-page-container>
-      <v-section-title
-        title="Our Services"
-        description="Comprehensive solutions designed to accelerate your digital transformation"
-        icon="ri-briefcase-fill">
-      </v-section-title>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Our expertise</p>
+          <h1 id="servicesHeroTitle">Full-service delivery teams engineered for outcomes</h1>
+          <p class="lead">
+            From discovery workshops to production-ready platforms, VicBts orchestrates strategy, design, and
+            engineering to accelerate your roadmap.
+          </p>
+          <div class="hero-actions">
+            <a routerLink="/contact" class="btn btn-primary">Plan a project</a>
+            <a routerLink="/contact" fragment="case-studies" class="btn btn-outline">Request case studies</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <h3>Engagement snapshot</h3>
+          <ul>
+            <li><span>2 week</span> discovery &amp; roadmap</li>
+            <li><span>Dedicated</span> cross-functional squad</li>
+            <li><span>Weekly</span> stakeholder demos</li>
+            <li><span>Metrics</span> aligned OKRs &amp; KPIs</li>
+          </ul>
+        </div>
+      </div>
     </lib-page-container>
   </section>
 
   <lib-services-section></lib-services-section>
 
-  <section class="additional-services">
-    <v-feature-section
-      sectionTitle="Core Development Services"
-      sectionDescription="Expert development teams ready to build your vision"
-      sectionIcon="ri-code-box-fill"
-      [features]="coreServices"
-      [columns]="3">
-    </v-feature-section>
+  <section class="pillar-section" aria-labelledby="pillarTitle">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">How we engage</p>
+        <h2 id="pillarTitle">Composable service pillars tailored to your product lifecycle</h2>
+        <p class="subtitle">
+          Combine these capabilities to assemble the perfect squad. Every engagement includes transparent delivery,
+          proactive communication, and clear success metrics.
+        </p>
+      </div>
+
+      <div class="pillar-grid">
+        <article *ngFor="let service of coreServices" class="pillar-card">
+          <div class="icon" aria-hidden="true">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section class="support-services">
-    <v-feature-section
-      sectionTitle="Support & Maintenance"
-      sectionDescription="Comprehensive support to keep your systems running at peak performance"
-      sectionIcon="ri-tools-fill"
-      [features]="supportServices"
-      [columns]="3">
-    </v-feature-section>
+  <section class="support-section" aria-labelledby="supportTitle">
+    <div class="container">
+      <div class="header">
+        <h2 id="supportTitle">Operational excellence that keeps you shipping</h2>
+        <p>
+          Beyond product delivery we embed reliable support, enablement, and optimization practices to sustain growth.
+        </p>
+      </div>
+      <div class="support-list">
+        <article *ngFor="let service of supportServices" class="support-card">
+          <div class="icon" aria-hidden="true">
+            <i [class]="service.icon"></i>
+          </div>
+          <div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <lib-contact-cta></lib-contact-cta>
