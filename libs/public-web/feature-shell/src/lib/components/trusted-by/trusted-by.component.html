@@ -1,0 +1,19 @@
+<section class="trusted-by" aria-labelledby="trustedByTitle">
+  <div class="container">
+    <div class="intro">
+      <p class="eyebrow" id="trustedByTitle">Trusted by forward-thinking teams</p>
+      <h2 class="title">Partners that scale with VicBts expertise</h2>
+      <p class="subtitle">
+        From funded startups to enterprise leaders, our clients rely on our delivery teams to ship resilient products
+        with measurable business outcomes.
+      </p>
+    </div>
+
+    <div class="logo-row" role="list">
+      <div class="logo-chip" role="listitem" *ngFor="let logo of logos">
+        <span class="logo-name">{{ logo.name }}</span>
+        <span class="logo-tagline">{{ logo.tagline }}</span>
+      </div>
+    </div>
+  </div>
+</section>

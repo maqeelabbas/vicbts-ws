@@ -1,22 +1,21 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { PageContainerComponent } from '../../components/page-container/page-container.component';
 import { ServicesSectionComponent } from '../../components/services-section/services-section.component';
 import { ContactCtaComponent } from '../../components/contact-cta/contact-cta.component';
-import { VSectionTitleComponent, VFeatureSectionComponent, Feature } from '@vicbts/shared/ui';
 import { SeoService } from '@vicbts/shared/util';
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'lib-services-page',
   standalone: true,
-  imports: [
-    CommonModule,
-    PageContainerComponent,
-    ServicesSectionComponent,
-    ContactCtaComponent,
-    VSectionTitleComponent,
-    VFeatureSectionComponent,
-  ],
+  imports: [CommonModule, RouterLink, PageContainerComponent, ServicesSectionComponent, ContactCtaComponent],
   templateUrl: './services-page.component.html',
   styleUrls: ['./services-page.component.scss'],
 })
@@ -71,6 +70,11 @@ export class ServicesPageComponent implements OnInit {
       icon: 'ri-24-hours-line',
       title: 'Emergency Support',
       description: 'Rapid response team available 24/7 for critical issues.',
+    },
+    {
+      icon: 'ri-lightbulb-flash-line',
+      title: 'Innovation Sprints',
+      description: 'Facilitated ideation and prototyping sprints to validate new product ideas quickly.',
     },
   ];
 }

@@ -1,9 +1,9 @@
-<footer class="public-footer">
-  <div class="footer-container">
+<footer class="public-footer" aria-labelledby="footerTitle">
+  <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">
+      <div class="brand">
         <div class="brand-logo">
-          <svg width="38" height="20" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="42" height="24" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               d="M30.0944 2.22569C29.0511 0.444187 26.7508 -0.172113 24.9566 0.849138C23.1623 1.87039 22.5536 4.14247 23.5969 5.92397L30.5368 17.7743C31.5801 19.5558 33.8804 20.1721 35.6746 19.1509C37.4689 18.1296 38.0776 15.8575 37.0343 14.076L30.0944 2.22569Z"
               fill="currentColor" />
@@ -17,10 +17,11 @@
               d="M7.82901 2.22569C8.87231 0.444187 11.1726 -0.172113 12.9668 0.849138C14.7611 1.87039 15.3698 4.14247 14.3265 5.92397L7.38656 17.7743C6.34325 19.5558 4.04298 20.1721 2.24875 19.1509C0.454514 18.1296 -0.154233 15.8575 0.88907 14.076L7.82901 2.22569Z"
               fill="currentColor" />
           </svg>
-          <span class="brand-text">{{ appName }}</span>
+          <span class="brand-text" id="footerTitle">{{ appName }}</span>
         </div>
         <p class="brand-description">
-          Empowering businesses with innovative solutions for a digital future.
+          VicBts builds resilient software platforms with a relentless focus on user experience, measurable outcomes, and
+          modern engineering excellence.
         </p>
         <div class="social-links">
           <a
@@ -30,48 +31,52 @@
             rel="noopener noreferrer"
             [attr.aria-label]="social.label"
             class="social-link">
-            <i [class]="social.icon"></i>
+            <i [class]="social.icon" aria-hidden="true"></i>
           </a>
         </div>
       </div>
 
-      <div class="footer-links">
-        <div class="links-column">
-          <h3 class="column-title">Company</h3>
-          <ul class="links-list">
+      <div class="footer-columns">
+        <div class="column">
+          <h3>Company</h3>
+          <ul>
             <li *ngFor="let link of footerLinks.company">
               <a [routerLink]="link.route">{{ link.label }}</a>
             </li>
           </ul>
         </div>
-
-        <div class="links-column">
-          <h3 class="column-title">Resources</h3>
-          <ul class="links-list">
+        <div class="column">
+          <h3>Resources</h3>
+          <ul>
             <li *ngFor="let link of footerLinks.resources">
               <a [routerLink]="link.route">{{ link.label }}</a>
             </li>
           </ul>
         </div>
-
-        <div class="links-column">
-          <h3 class="column-title">Legal</h3>
-          <ul class="links-list">
+        <div class="column">
+          <h3>Legal</h3>
+          <ul>
             <li *ngFor="let link of footerLinks.legal">
               <a [routerLink]="link.route">{{ link.label }}</a>
             </li>
           </ul>
         </div>
       </div>
+
+      <div class="footer-cta">
+        <h3>Let’s build what’s next</h3>
+        <p>Share your goals and we’ll assemble the right team for your next release.</p>
+        <a routerLink="/contact" class="cta-button">Start a conversation</a>
+      </div>
     </div>
 
     <div class="footer-bottom">
-      <p class="copyright">
-        © {{ currentYear }} {{ appName }}. All rights reserved.
-      </p>
-      <p class="credits">
-        Built with <i class="ri-heart-fill"></i> using Angular & Nx
-      </p>
+      <p>© {{ currentYear }} {{ appName }}. All rights reserved.</p>
+      <div class="credits">
+        <span>Crafted with</span>
+        <i class="ri-heart-fill" aria-hidden="true"></i>
+        <span>in Angular &amp; Nx</span>
+      </div>
     </div>
   </div>
 </footer>

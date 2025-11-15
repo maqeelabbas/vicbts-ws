@@ -1,53 +1,72 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VFeatureSectionComponent, Feature } from '@vicbts/shared/ui';
+import { RouterLink } from '@angular/router';
+
+interface ServiceCard {
+  icon: string;
+  title: string;
+  description: string;
+  accent?: boolean;
+  link?: string;
+}
 
 @Component({
   selector: 'lib-services-section',
   standalone: true,
-  imports: [CommonModule, VFeatureSectionComponent],
-  template: `
-    <v-feature-section
-      sectionTitle="Our Services"
-      sectionDescription="Comprehensive solutions designed to help your business thrive"
-      sectionIcon="ri-service-fill"
-      [features]="services"
-      [columns]="3">
-    </v-feature-section>
-  `,
-  styles: [],
+  imports: [CommonModule, RouterLink],
+  templateUrl: './services-section.component.html',
+  styleUrls: ['./services-section.component.scss'],
 })
 export class ServicesSectionComponent {
-  services: Feature[] = [
+  readonly featuredServices: ServiceCard[] = [
     {
-      icon: 'ri-rocket-line',
-      title: 'Digital Transformation',
-      description: 'Modernize your operations with cutting-edge technology and strategic digital solutions.',
+      icon: 'ri-stack-line',
+      title: 'Product strategy & discovery',
+      description:
+        'Rapid research, journey mapping, and service blueprints that uncover the right opportunities before sprint one.',
+      accent: true,
+      link: '/services',
     },
     {
-      icon: 'ri-bar-chart-line',
-      title: 'Business Analytics',
-      description: 'Gain actionable insights from your data with advanced analytics and reporting tools.',
-    },
-    {
-      icon: 'ri-shield-check-line',
-      title: 'Security & Compliance',
-      description: 'Protect your business with enterprise-grade security and regulatory compliance.',
-    },
-    {
-      icon: 'ri-team-line',
-      title: 'Team Collaboration',
-      description: 'Empower your team with seamless communication and collaboration platforms.',
+      icon: 'ri-artboard-2-line',
+      title: 'Design systems & UX architecture',
+      description:
+        'Scalable design languages, accessibility audits, and component libraries that power cohesive customer experiences.',
+      link: '/services',
     },
     {
       icon: 'ri-cloud-line',
-      title: 'Cloud Solutions',
-      description: 'Scale effortlessly with reliable, secure, and flexible cloud infrastructure.',
+      title: 'Cloud-native Angular platforms',
+      description:
+        'Nx-powered workspaces, API integrations, and CI/CD pipelines engineered for velocity and governance.',
+      link: '/services',
+    },
+  ];
+
+  readonly supportingServices: ServiceCard[] = [
+    {
+      icon: 'ri-team-line',
+      title: 'Dedicated delivery squads',
+      description:
+        'Cross-functional pods with product, UX, engineering, QA, and DevOps embedded alongside your team.',
     },
     {
-      icon: 'ri-customer-service-line',
-      title: '24/7 Support',
-      description: 'Get help whenever you need it with our dedicated round-the-clock support team.',
+      icon: 'ri-secure-payment-line',
+      title: 'Security & compliance',
+      description:
+        'Enterprise-grade DevSecOps practices, audits, and remediation plans for regulated industries.',
+    },
+    {
+      icon: 'ri-bar-chart-2-line',
+      title: 'Analytics & optimization',
+      description:
+        'Experimentation frameworks, observability, and dashboards that convert data into confident decisions.',
+    },
+    {
+      icon: 'ri-customer-service-2-line',
+      title: 'Lifecycle partnership',
+      description:
+        'Enablement, training, and managed services that keep your product evolving long after launch.',
     },
   ];
 }

@@ -1,0 +1,40 @@
+<section class="services-section" aria-labelledby="servicesTitle">
+  <div class="container">
+    <header class="section-header">
+      <p class="eyebrow">What we deliver</p>
+      <h2 class="title" id="servicesTitle">From discovery to production, we own the end-to-end experience</h2>
+      <p class="subtitle">
+        Engage VicBts for strategic consulting, design systems, or full product development. Every partnership unlocks a
+        senior team that moves as fast as your ambitions.
+      </p>
+    </header>
+
+    <div class="services-featured">
+      <article *ngFor="let service of featuredServices" class="service-card" [class.service-card--accent]="service.accent">
+        <div class="icon" aria-hidden="true">
+          <i [class]="service.icon"></i>
+        </div>
+        <div class="copy">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+        <a *ngIf="service.link" [routerLink]="service.link" class="service-link">
+          Learn more
+          <i class="ri-arrow-right-line" aria-hidden="true"></i>
+        </a>
+      </article>
+    </div>
+
+    <div class="services-grid">
+      <article *ngFor="let service of supportingServices" class="service-card">
+        <div class="icon" aria-hidden="true">
+          <i [class]="service.icon"></i>
+        </div>
+        <div class="copy">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

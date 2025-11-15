@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { PageContainerComponent } from '../../components/page-container/page-container.component';
-import { VSectionTitleComponent } from '@vicbts/shared/ui';
 import { SeoService } from '@vicbts/shared/util';
 
 interface ContactForm {
@@ -15,7 +15,7 @@ interface ContactForm {
 @Component({
   selector: 'lib-contact-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, PageContainerComponent, VSectionTitleComponent],
+  imports: [CommonModule, FormsModule, RouterLink, PageContainerComponent],
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.scss'],
 })
@@ -25,7 +25,7 @@ export class ContactPageComponent implements OnInit {
   ngOnInit(): void {
     this.seoService.updatePageSeo({
       title: 'Contact Us',
-      description: 'Get in touch with VicBts. Have a question or ready to start your project? We\'d love to hear from you. Contact our team today.',
+      description: "Get in touch with VicBts. Have a question or ready to start your project? We'd love to hear from you. Contact our team today.",
       keywords: ['contact', 'get in touch', 'business inquiry', 'support', 'consultation'],
       url: 'https://vicbts.com/contact',
       type: 'website',
@@ -71,7 +71,6 @@ export class ContactPageComponent implements OnInit {
     if (this.isFormValid()) {
       console.log('Form submitted:', this.formData);
       this.submitted = true;
-      // Reset form after 3 seconds
       setTimeout(() => {
         this.submitted = false;
         this.resetForm();

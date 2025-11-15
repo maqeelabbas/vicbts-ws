@@ -1,19 +1,10 @@
-<nav class="public-header">
-  <div class="header-container">
-    <div class="header-brand">
-      <button
-        class="menu-toggle"
-        type="button"
-        (click)="toggleMenu()"
-        [attr.aria-expanded]="isMenuOpen"
-        aria-label="Toggle navigation">
-        <i class="ri-menu-fill" *ngIf="!isMenuOpen"></i>
-        <i class="ri-close-fill" *ngIf="isMenuOpen"></i>
-      </button>
-      <a routerLink="/" class="brand-link">
-        <img *ngIf="logoUrl" [src]="logoUrl" [alt]="appName" class="brand-logo-img" />
-        <span *ngIf="!logoUrl" class="brand-logo">
-          <svg width="38" height="20" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<header class="public-header" [class.is-scrolled]="isScrolled">
+  <div class="nav-wrapper">
+    <a routerLink="/" class="brand" aria-label="Go to homepage">
+      <span class="brand-mark">
+        <img *ngIf="logoUrl; else brandSymbol" [src]="logoUrl" [alt]="appName" loading="lazy" />
+        <ng-template #brandSymbol>
+          <svg width="38" height="20" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path
               d="M30.0944 2.22569C29.0511 0.444187 26.7508 -0.172113 24.9566 0.849138C23.1623 1.87039 22.5536 4.14247 23.5969 5.92397L30.5368 17.7743C31.5801 19.5558 33.8804 20.1721 35.6746 19.1509C37.4689 18.1296 38.0776 15.8575 37.0343 14.076L30.0944 2.22569Z"
               fill="currentColor" />
@@ -27,28 +18,42 @@
               d="M7.82901 2.22569C8.87231 0.444187 11.1726 -0.172113 12.9668 0.849138C14.7611 1.87039 15.3698 4.14247 14.3265 5.92397L7.38656 17.7743C6.34325 19.5558 4.04298 20.1721 2.24875 19.1509C0.454514 18.1296 -0.154233 15.8575 0.88907 14.076L7.82901 2.22569Z"
               fill="currentColor" />
           </svg>
-        </span>
-        <span class="brand-text">{{ appName }}</span>
-      </a>
-    </div>
+        </ng-template>
+      </span>
+      <span class="brand-text">{{ appName }}</span>
+    </a>
 
-    <div class="header-nav" [class.open]="isMenuOpen">
-      <ul class="nav-list">
-        <li class="nav-item" *ngFor="let item of navItems$ | async">
-          <a 
-            [routerLink]="item.route" 
-            routerLinkActive="active" 
-            [routerLinkActiveOptions]="{exact: item.route === '/'}" 
+    <button
+      class="nav-toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="primaryNavigation"
+      aria-label="Toggle navigation">
+      <i class="ri-menu-fill" *ngIf="!isMenuOpen" aria-hidden="true"></i>
+      <i class="ri-close-fill" *ngIf="isMenuOpen" aria-hidden="true"></i>
+    </button>
+
+    <nav class="nav-links" [class.open]="isMenuOpen" id="primaryNavigation">
+      <ul>
+        <li *ngFor="let item of navItems$ | async">
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: item.route === '/' }"
             (click)="closeMenu()">
-            <i *ngIf="item.icon" [class]="item.icon"></i>
+            <i *ngIf="item.icon" [class]="item.icon" aria-hidden="true"></i>
             {{ item.label }}
           </a>
         </li>
       </ul>
-      <div class="nav-actions">
-        <button class="btn btn-outline">Sign In</button>
-        <button class="btn btn-primary">Get Started</button>
-      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a routerLink="/contact" class="btn btn-outline">Book a call</a>
+      <a routerLink="/services" class="btn btn-primary">Work with us</a>
     </div>
   </div>
-</nav>
+
+  <div class="nav-overlay" *ngIf="isMenuOpen" (click)="closeMenu()" aria-hidden="true"></div>
+</header>

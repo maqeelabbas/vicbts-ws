@@ -1,64 +1,57 @@
-<section class="testimonials-section">
+<section class="testimonials" aria-labelledby="testimonialsTitle">
   <div class="container">
-    <div class="section-header">
-      <div class="section-icon">
-        <i class="ri-chat-quote-fill"></i>
-      </div>
-      <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-description">
-        Hear from businesses that have transformed with our solutions
+    <header class="section-header">
+      <p class="eyebrow">Client stories</p>
+      <h2 class="title" id="testimonialsTitle">Teams trust VicBts to co-create remarkable products</h2>
+      <p class="subtitle">
+        Our partners span industries, but each engagement is rooted in transparent collaboration, measurable outcomes,
+        and a shared passion for product excellence.
       </p>
-    </div>
+    </header>
 
-    <div class="testimonial-slider">
-      <button
-        class="nav-button prev"
-        (click)="previous()"
-        aria-label="Previous testimonial">
-        <i class="ri-arrow-left-s-line"></i>
+    <div class="slider" role="group" aria-roledescription="carousel">
+      <button class="slider-nav prev" type="button" (click)="previous()" aria-label="Previous testimonial">
+        <i class="ri-arrow-left-s-line" aria-hidden="true"></i>
       </button>
 
-      <div class="testimonial-card">
-        <div class="rating">
-          <i
-            *ngFor="let star of [1, 2, 3, 4, 5]"
-            class="ri-star-fill"
-            [class.filled]="star <= currentTestimonial.rating"></i>
+      <article class="testimonial-card" aria-live="polite">
+        <div class="quote-mark" aria-hidden="true">
+          <i class="ri-double-quotes-l"></i>
         </div>
-
-        <blockquote class="quote">
-          "{{ currentTestimonial.quote }}"
+        <blockquote>
+          {{ currentTestimonial.quote }}
         </blockquote>
-
         <div class="author">
-          <img
-            [src]="currentTestimonial.avatar"
-            [alt]="currentTestimonial.author"
-            class="avatar" />
-          <div class="author-info">
-            <p class="author-name">{{ currentTestimonial.author }}</p>
-            <p class="author-role">
-              {{ currentTestimonial.role }} at {{ currentTestimonial.company }}
-            </p>
+          <img [src]="currentTestimonial.avatar" [alt]="currentTestimonial.author" loading="lazy" />
+          <div>
+            <p class="name">{{ currentTestimonial.author }}</p>
+            <p class="role">{{ currentTestimonial.role }} · {{ currentTestimonial.company }}</p>
+            <div class="rating" aria-label="{{ currentTestimonial.rating }} out of 5 stars">
+              <i
+                *ngFor="let star of [1, 2, 3, 4, 5]"
+                class="ri-star-fill"
+                [class.filled]="star <= currentTestimonial.rating"
+                aria-hidden="true"></i>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
 
-      <button
-        class="nav-button next"
-        (click)="next()"
-        aria-label="Next testimonial">
-        <i class="ri-arrow-right-s-line"></i>
+      <button class="slider-nav next" type="button" (click)="next()" aria-label="Next testimonial">
+        <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
       </button>
     </div>
 
-    <div class="slider-dots">
+    <div class="slider-dots" role="tablist">
       <button
         *ngFor="let testimonial of testimonials; let i = index"
         class="dot"
         [class.active]="i === currentIndex"
-        (click)="goToSlide(i)"
-        [attr.aria-label]="'Go to testimonial ' + (i + 1)"></button>
+        type="button"
+        role="tab"
+        [attr.aria-selected]="i === currentIndex"
+        [attr.aria-label]="'Show testimonial ' + (i + 1)"
+        (click)="goToSlide(i)"></button>
     </div>
   </div>
 </section>
