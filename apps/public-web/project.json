@@ -4,7 +4,7 @@
   "projectType": "application",
   "prefix": "app",
   "sourceRoot": "apps/public-web/src",
-  "tags": [],
+  "tags": ["type:app", "scope:public-web"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
