@@ -1,0 +1,19 @@
+@import '../../../../../../shared/ui/src/lib/theme/theme';
+@import '../../../../../../shared/ui/src/lib/theme/mixins';
+
+.services-page {
+  .page-hero {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-2xl);
+    background: linear-gradient(135deg, var(--color-primary-50), var(--bg-default));
+  }
+
+  .additional-services,
+  .support-services {
+    background-color: var(--bg-default);
+  }
+
+  .support-services {
+    background-color: var(--bg-surface);
+  }
+}

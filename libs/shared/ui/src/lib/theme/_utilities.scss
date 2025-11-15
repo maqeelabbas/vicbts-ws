@@ -1,0 +1,408 @@
+@import 'colors';
+@import 'spacing';
+@import 'typography';
+@import 'radius';
+@import 'elevation';
+
+// Text alignment
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// Text transform
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Font weight
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+// Margin utilities
+$spacing-values: ('xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl');
+
+@each $size in $spacing-values {
+  .m-#{$size} {
+    margin: var(--spacing-#{$size});
+  }
+
+  .mt-#{$size} {
+    margin-top: var(--spacing-#{$size});
+  }
+
+  .mb-#{$size} {
+    margin-bottom: var(--spacing-#{$size});
+  }
+
+  .ml-#{$size} {
+    margin-left: var(--spacing-#{$size});
+  }
+
+  .mr-#{$size} {
+    margin-right: var(--spacing-#{$size});
+  }
+
+  .mx-#{$size} {
+    margin-left: var(--spacing-#{$size});
+    margin-right: var(--spacing-#{$size});
+  }
+
+  .my-#{$size} {
+    margin-top: var(--spacing-#{$size});
+    margin-bottom: var(--spacing-#{$size});
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// Padding utilities
+@each $size in $spacing-values {
+  .p-#{$size} {
+    padding: var(--spacing-#{$size});
+  }
+
+  .pt-#{$size} {
+    padding-top: var(--spacing-#{$size});
+  }
+
+  .pb-#{$size} {
+    padding-bottom: var(--spacing-#{$size});
+  }
+
+  .pl-#{$size} {
+    padding-left: var(--spacing-#{$size});
+  }
+
+  .pr-#{$size} {
+    padding-right: var(--spacing-#{$size});
+  }
+
+  .px-#{$size} {
+    padding-left: var(--spacing-#{$size});
+    padding-right: var(--spacing-#{$size});
+  }
+
+  .py-#{$size} {
+    padding-top: var(--spacing-#{$size});
+    padding-bottom: var(--spacing-#{$size});
+  }
+}
+
+// Shadow utilities
+.shadow-none {
+  box-shadow: none;
+}
+
+.shadow-sm {
+  box-shadow: var(--elevation-card);
+}
+
+.shadow-md {
+  box-shadow: var(--elevation-dropdown);
+}
+
+.shadow-lg {
+  box-shadow: var(--elevation-modal);
+}
+
+// Border radius utilities
+.rounded-none {
+  border-radius: 0;
+}
+
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+.rounded-2xl {
+  border-radius: var(--radius-2xl);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+// Display utilities
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+// Position utilities
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+// Width utilities
+.w-100 {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+// Overflow utilities
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+// Card component
+.card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--elevation-card);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--elevation-button-hover);
+  }
+
+  .card-header {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .card-body {
+    padding: var(--spacing-md) 0;
+  }
+
+  .card-footer {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+  }
+}
+
+// Button utilities
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.btn-primary {
+  background-color: var(--color-primary-600);
+  color: white;
+  border-color: var(--color-primary-600);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-700);
+    border-color: var(--color-primary-700);
+    box-shadow: var(--elevation-button-hover);
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary-600);
+  border-color: var(--color-primary-600);
+
+  &:hover:not(:disabled) {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-700);
+    color: var(--color-primary-700);
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-light);
+
+  &:hover:not(:disabled) {
+    background-color: var(--bg-default);
+    border-color: var(--text-secondary);
+  }
+}
+
+.btn-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: var(--font-size-lg);
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+// Text color utilities
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-accent {
+  color: var(--color-primary-600);
+}
+
+.text-success {
+  color: var(--color-success-600);
+}
+
+.text-warning {
+  color: var(--color-warning-600);
+}
+
+.text-error {
+  color: var(--color-error-600);
+}
+
+.text-white {
+  color: white;
+}
+
+// Background utilities
+.bg-primary {
+  background-color: var(--color-primary-600);
+  color: white;
+}
+
+.bg-surface {
+  background-color: var(--bg-surface);
+}
+
+.bg-default {
+  background-color: var(--bg-default);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}

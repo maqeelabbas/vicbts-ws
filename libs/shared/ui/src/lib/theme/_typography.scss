@@ -1,0 +1,92 @@
+// Typography Tokens - Based on Materialize Template
+// ==================================================
+
+// Font Families
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Font Sizes
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-md: 1.125rem; // 18px
+$font-size-lg: 1.25rem; // 20px
+$font-size-xl: 1.5rem; // 24px
+$font-size-2xl: 1.875rem; // 30px
+$font-size-3xl: 2.25rem; // 36px
+$font-size-4xl: 3rem; // 48px
+$font-size-5xl: 3.75rem; // 60px
+
+// Line Heights
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+// Heading Sizes
+$h1-font-size: $font-size-5xl; // 60px
+$h2-font-size: $font-size-4xl; // 48px
+$h3-font-size: $font-size-3xl; // 36px
+$h4-font-size: $font-size-2xl; // 30px
+$h5-font-size: $font-size-xl; // 24px
+$h6-font-size: $font-size-lg; // 20px
+
+// Heading Font Weights
+$heading-font-weight: $font-weight-bold;
+$heading-line-height: $line-height-tight;
+
+// Body Text
+$body-font-family: $font-family-primary;
+$body-font-size: $font-size-base;
+$body-font-weight: $font-weight-regular;
+$body-line-height: $line-height-normal;
+
+// Lead Text
+$lead-font-size: $font-size-lg;
+$lead-font-weight: $font-weight-regular;
+$lead-line-height: $line-height-relaxed;
+
+// Small Text
+$small-font-size: $font-size-sm;
+
+// CSS Variables
+:root {
+  --font-family-primary: #{$font-family-primary};
+  --font-family-monospace: #{$font-family-monospace};
+
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-md: #{$font-size-md};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+  --font-size-5xl: #{$font-size-5xl};
+
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+  --line-height-loose: #{$line-height-loose};
+
+  --h1-font-size: #{$h1-font-size};
+  --h2-font-size: #{$h2-font-size};
+  --h3-font-size: #{$h3-font-size};
+  --h4-font-size: #{$h4-font-size};
+  --h5-font-size: #{$h5-font-size};
+  --h6-font-size: #{$h6-font-size};
+}

@@ -1,0 +1,14 @@
+<div class="v-form-field">
+  <label *ngIf="label" class="v-form-label" [for]="'input-' + label">{{ label }}</label>
+  <input
+    [id]="'input-' + label"
+    [type]="type"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [value]="value"
+    (input)="onInput($event)"
+    (blur)="onTouched()"
+    [class.v-input-error]="error"
+    class="v-form-control" />
+  <div *ngIf="error" class="v-form-error">{{ error }}</div>
+</div>

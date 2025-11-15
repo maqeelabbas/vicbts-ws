@@ -1,0 +1,63 @@
+{
+  "appId": "public-web",
+  "appName": "VicBts",
+  "companyName": "VicBts Technology Solutions",
+  "logoUrl": "/assets/logo.svg",
+  "theme": {
+    "primaryColor": "#696cff",
+    "secondaryColor": "#8592a3",
+    "accentColor": "#71dd37",
+    "mode": "light",
+    "layout": "vertical",
+    "contentWidth": "full"
+  },
+  "navigation": [
+    {
+      "id": "home",
+      "label": "Home",
+      "route": "/",
+      "icon": null,
+      "order": 0
+    },
+    {
+      "id": "services",
+      "label": "Services",
+      "route": "/services",
+      "icon": null,
+      "order": 1
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "route": "/about",
+      "icon": null,
+      "order": 2
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "route": "/contact",
+      "icon": null,
+      "order": 3
+    }
+  ],
+  "featureFlags": {
+    "enableAnalytics": true,
+    "enableChatSupport": false,
+    "enableDarkMode": true,
+    "enableNewsletterSignup": true
+  },
+  "pageSize": 20,
+  "apiBaseUrl": "/api",
+  "contactInfo": {
+    "email": "contact@vicbts.com",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Business St, Suite 100, City, State 12345"
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/vicbts",
+    "twitter": "https://twitter.com/vicbts",
+    "linkedin": "https://linkedin.com/company/vicbts",
+    "github": "https://github.com/vicbts"
+  }
+}

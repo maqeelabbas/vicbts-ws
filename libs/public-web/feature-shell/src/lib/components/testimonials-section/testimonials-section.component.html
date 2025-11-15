@@ -1,0 +1,64 @@
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="ri-chat-quote-fill"></i>
+      </div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-description">
+        Hear from businesses that have transformed with our solutions
+      </p>
+    </div>
+
+    <div class="testimonial-slider">
+      <button
+        class="nav-button prev"
+        (click)="previous()"
+        aria-label="Previous testimonial">
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+
+      <div class="testimonial-card">
+        <div class="rating">
+          <i
+            *ngFor="let star of [1, 2, 3, 4, 5]"
+            class="ri-star-fill"
+            [class.filled]="star <= currentTestimonial.rating"></i>
+        </div>
+
+        <blockquote class="quote">
+          "{{ currentTestimonial.quote }}"
+        </blockquote>
+
+        <div class="author">
+          <img
+            [src]="currentTestimonial.avatar"
+            [alt]="currentTestimonial.author"
+            class="avatar" />
+          <div class="author-info">
+            <p class="author-name">{{ currentTestimonial.author }}</p>
+            <p class="author-role">
+              {{ currentTestimonial.role }} at {{ currentTestimonial.company }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="nav-button next"
+        (click)="next()"
+        aria-label="Next testimonial">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+    </div>
+
+    <div class="slider-dots">
+      <button
+        *ngFor="let testimonial of testimonials; let i = index"
+        class="dot"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Go to testimonial ' + (i + 1)"></button>
+    </div>
+  </div>
+</section>

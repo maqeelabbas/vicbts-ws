@@ -1,0 +1,126 @@
+<div class="contact-page">
+  <section class="page-hero">
+    <lib-page-container>
+      <v-section-title
+        title="Get In Touch"
+        description="Have a question or ready to start your project? We'd love to hear from you."
+        icon="ri-customer-service-fill">
+      </v-section-title>
+    </lib-page-container>
+  </section>
+
+  <section class="contact-content">
+    <lib-page-container>
+      <div class="contact-grid">
+        <div class="contact-form-container">
+          <div class="form-header">
+            <h3>Send us a message</h3>
+            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+          </div>
+
+          <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                [(ngModel)]="formData.name"
+                required
+                placeholder="John Doe"
+                class="form-input" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="formData.email"
+                required
+                placeholder="john@example.com"
+                class="form-input" />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                [(ngModel)]="formData.company"
+                placeholder="Your Company"
+                class="form-input" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                [(ngModel)]="formData.message"
+                required
+                rows="5"
+                placeholder="Tell us about your project..."
+                class="form-input"></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              [disabled]="!isFormValid()">
+              <i class="ri-send-plane-fill"></i>
+              Send Message
+            </button>
+
+            <div *ngIf="submitted" class="success-message">
+              <i class="ri-checkbox-circle-fill"></i>
+              Thank you! We'll be in touch soon.
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-header">
+            <h3>Contact Information</h3>
+            <p>Reach out to us through any of these channels.</p>
+          </div>
+
+          <div class="info-cards">
+            <div *ngFor="let info of contactInfo" class="info-card">
+              <div class="info-icon">
+                <i [class]="info.icon"></i>
+              </div>
+              <div class="info-content">
+                <h4>{{ info.title }}</h4>
+                <a *ngIf="info.link" [href]="info.link" class="info-value">
+                  {{ info.value }}
+                </a>
+                <p *ngIf="!info.link" class="info-value">{{ info.value }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link">
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener" class="social-link">
+                <i class="ri-github-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </lib-page-container>
+  </section>
+</div>

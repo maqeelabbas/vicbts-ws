@@ -1,0 +1,77 @@
+<footer class="public-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <svg width="38" height="20" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M30.0944 2.22569C29.0511 0.444187 26.7508 -0.172113 24.9566 0.849138C23.1623 1.87039 22.5536 4.14247 23.5969 5.92397L30.5368 17.7743C31.5801 19.5558 33.8804 20.1721 35.6746 19.1509C37.4689 18.1296 38.0776 15.8575 37.0343 14.076L30.0944 2.22569Z"
+              fill="currentColor" />
+            <path
+              d="M22.9676 2.22569C24.0109 0.444187 26.3112 -0.172113 28.1054 0.849138C29.8996 1.87039 30.5084 4.14247 29.4651 5.92397L22.5251 17.7743C21.4818 19.5558 19.1816 20.1721 17.3873 19.1509C15.5931 18.1296 14.9843 15.8575 16.0276 14.076L22.9676 2.22569Z"
+              fill="currentColor" />
+            <path
+              d="M14.9558 2.22569C13.9125 0.444187 11.6122 -0.172113 9.818 0.849138C8.02377 1.87039 7.41502 4.14247 8.45833 5.92397L15.3983 17.7743C16.4416 19.5558 18.7418 20.1721 20.5361 19.1509C22.3303 18.1296 22.9391 15.8575 21.8958 14.076L14.9558 2.22569Z"
+              fill="currentColor" />
+            <path
+              d="M7.82901 2.22569C8.87231 0.444187 11.1726 -0.172113 12.9668 0.849138C14.7611 1.87039 15.3698 4.14247 14.3265 5.92397L7.38656 17.7743C6.34325 19.5558 4.04298 20.1721 2.24875 19.1509C0.454514 18.1296 -0.154233 15.8575 0.88907 14.076L7.82901 2.22569Z"
+              fill="currentColor" />
+          </svg>
+          <span class="brand-text">{{ appName }}</span>
+        </div>
+        <p class="brand-description">
+          Empowering businesses with innovative solutions for a digital future.
+        </p>
+        <div class="social-links">
+          <a
+            *ngFor="let social of socialLinks"
+            [href]="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="social.label"
+            class="social-link">
+            <i [class]="social.icon"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="links-column">
+          <h3 class="column-title">Company</h3>
+          <ul class="links-list">
+            <li *ngFor="let link of footerLinks.company">
+              <a [routerLink]="link.route">{{ link.label }}</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="links-column">
+          <h3 class="column-title">Resources</h3>
+          <ul class="links-list">
+            <li *ngFor="let link of footerLinks.resources">
+              <a [routerLink]="link.route">{{ link.label }}</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="links-column">
+          <h3 class="column-title">Legal</h3>
+          <ul class="links-list">
+            <li *ngFor="let link of footerLinks.legal">
+              <a [routerLink]="link.route">{{ link.label }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        © {{ currentYear }} {{ appName }}. All rights reserved.
+      </p>
+      <p class="credits">
+        Built with <i class="ri-heart-fill"></i> using Angular & Nx
+      </p>
+    </div>
+  </div>
+</footer>

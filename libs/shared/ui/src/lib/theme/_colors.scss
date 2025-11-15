@@ -1,0 +1,102 @@
+// Color Tokens - Based on Materialize Template
+// ==============================================
+
+// Primary Brand Colors
+$color-primary: #666cff;
+$color-primary-light: #7983ff;
+$color-primary-dark: #5a5aff;
+
+// Secondary Colors
+$color-secondary: #8592a3;
+$color-secondary-light: #9da8b6;
+$color-secondary-dark: #6f7c8f;
+
+// Success, Warning, Error, Info
+$color-success: #72e128;
+$color-warning: #ffab00;
+$color-error: #ff4d49;
+$color-info: #26c6f9;
+
+// Neutral Colors
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Gray Scale
+$color-gray-50: #fafafa;
+$color-gray-100: #f5f5f5;
+$color-gray-200: #eeeeee;
+$color-gray-300: #e0e0e0;
+$color-gray-400: #bdbdbd;
+$color-gray-500: #9e9e9e;
+$color-gray-600: #757575;
+$color-gray-700: #616161;
+$color-gray-800: #424242;
+$color-gray-900: #212121;
+
+// Text Colors
+$text-primary: #566a7f;
+$text-secondary: #8592a3;
+$text-disabled: rgba(86, 106, 127, 0.4);
+$text-heading: #566a7f;
+$text-muted: #a8b1bb;
+
+// Background Colors
+$bg-primary: $color-white;
+$bg-secondary: #f8f9fa;
+$bg-tertiary: #f5f5f9;
+
+// Border Colors
+$border-color: rgba(0, 0, 0, 0.06);
+$border-color-light: rgba(0, 0, 0, 0.04);
+$border-color-dark: rgba(0, 0, 0, 0.12);
+
+// Overlay
+$overlay-bg: rgba(0, 0, 0, 0.5);
+
+// CSS Variables for Dynamic Theming
+:root {
+  // Primary Colors
+  --color-primary: #{$color-primary};
+  --color-primary-light: #{$color-primary-light};
+  --color-primary-dark: #{$color-primary-dark};
+
+  // Secondary Colors
+  --color-secondary: #{$color-secondary};
+  --color-secondary-light: #{$color-secondary-light};
+  --color-secondary-dark: #{$color-secondary-dark};
+
+  // Status Colors
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-error: #{$color-error};
+  --color-info: #{$color-info};
+
+  // Text Colors
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-disabled: #{$text-disabled};
+  --text-heading: #{$text-heading};
+  --text-muted: #{$text-muted};
+
+  // Background Colors
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --bg-tertiary: #{$bg-tertiary};
+
+  // Border Colors
+  --border-color: #{$border-color};
+  --border-color-light: #{$border-color-light};
+  --border-color-dark: #{$border-color-dark};
+}
+
+// Dark Theme
+[data-theme='dark'] {
+  --color-primary: #{$color-primary};
+  --text-primary: #cfd3d9;
+  --text-secondary: #a5a8ad;
+  --text-heading: #e4e6e8;
+  --bg-primary: #2b2c40;
+  --bg-secondary: #25293c;
+  --bg-tertiary: #1f2130;
+  --border-color: rgba(255, 255, 255, 0.08);
+}

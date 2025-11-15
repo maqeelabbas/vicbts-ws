@@ -1,0 +1,201 @@
+@import '../../../../../../shared/ui/src/lib/theme/theme';
+@import '../../../../../../shared/ui/src/lib/theme/mixins';
+
+.testimonials-section {
+  @include section-padding();
+  background-color: var(--bg-surface);
+
+  .container {
+    @include container();
+  }
+
+  .section-header {
+    @include section-title();
+  }
+
+  .section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.125rem;
+    height: 5.125rem;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+    border-radius: var(--radius-full);
+    color: white;
+    font-size: var(--font-size-4xl);
+  }
+
+  .section-title {
+    @include fluid-type($font-size-3xl, $font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-description {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: var(--spacing-3xl) auto 0;
+    padding: 0 var(--spacing-3xl);
+
+    @include mobile-only {
+      padding: 0 var(--spacing-2xl);
+    }
+  }
+
+  .testimonial-card {
+    background-color: white;
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-3xl);
+    box-shadow: var(--elevation-card);
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    @include mobile-only {
+      padding: var(--spacing-xl);
+    }
+  }
+
+  .rating {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+
+    i {
+      font-size: var(--font-size-xl);
+      color: var(--color-gray-300);
+
+      &.filled {
+        color: #ffc107;
+      }
+    }
+  }
+
+  .quote {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-relaxed);
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 0 0 var(--spacing-2xl);
+    quotes: '"' '"';
+
+    &::before {
+      content: open-quote;
+    }
+
+    &::after {
+      content: close-quote;
+    }
+
+    @include mobile-only {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 3px solid var(--color-primary-100);
+  }
+
+  .author-info {
+    text-align: left;
+  }
+
+  .author-name {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-xs);
+  }
+
+  .author-role {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-color: white;
+    color: var(--color-primary-600);
+    border-radius: var(--radius-full);
+    box-shadow: var(--elevation-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-2xl);
+
+    &:hover {
+      background-color: var(--color-primary-600);
+      color: white;
+      box-shadow: var(--elevation-md);
+    }
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+
+    @include mobile-only {
+      width: 40px;
+      height: 40px;
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border: none;
+    background-color: var(--color-gray-300);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+
+    &:hover {
+      background-color: var(--color-primary-400);
+    }
+
+    &.active {
+      background-color: var(--color-primary-600);
+      width: 32px;
+    }
+  }
+}

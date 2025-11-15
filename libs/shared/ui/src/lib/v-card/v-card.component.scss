@@ -1,0 +1,28 @@
+.v-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.v-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #d9dee3;
+}
+
+.v-card-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #566a7f;
+}
+
+.v-card-subtitle {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.875rem;
+  color: #a1acb8;
+}
+
+.v-card-body {
+  padding: 1.5rem;
+}

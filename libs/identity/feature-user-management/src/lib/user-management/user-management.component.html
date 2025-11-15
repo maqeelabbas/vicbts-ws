@@ -1,0 +1,91 @@
+<div class="user-management-container">
+  <lib-v-card title="User Management" subtitle="Manage users, roles, and permissions">
+    <div class="toolbar">
+      <lib-v-button variant="primary" (click)="loadUsers()">
+        Refresh
+      </lib-v-button>
+    </div>
+
+    <lib-v-table
+      [columns]="columns"
+      [data]="users"
+      [actions]="actions"
+      [loading]="loading"
+      emptyMessage="No users found">
+    </lib-v-table>
+  </lib-v-card>
+
+  <!-- Edit User Side Panel -->
+  <div 
+    *ngIf="showEditPanel" 
+    class="side-panel-overlay" 
+    (click)="closeEditPanel()"
+    (keydown.escape)="closeEditPanel()"
+    role="dialog"
+    tabindex="-1"
+    aria-modal="true">
+    <div 
+      class="side-panel" 
+      (click)="$event.stopPropagation()"
+      (keydown)="$event.stopPropagation()"
+      role="document"
+      tabindex="0">
+      <div class="side-panel-header">
+        <h3>Edit User</h3>
+        <button type="button" class="close-btn" (click)="closeEditPanel()">✕</button>
+      </div>
+
+      <div class="side-panel-body" *ngIf="selectedUser">
+        <form (ngSubmit)="saveUser()">
+          <lib-v-input
+            [(ngModel)]="selectedUser.firstName"
+            name="firstName"
+            label="First Name"
+            placeholder="Enter first name">
+          </lib-v-input>
+
+          <lib-v-input
+            [(ngModel)]="selectedUser.lastName"
+            name="lastName"
+            label="Last Name"
+            placeholder="Enter last name">
+          </lib-v-input>
+
+          <lib-v-input
+            [(ngModel)]="selectedUser.email"
+            name="email"
+            type="email"
+            label="Email"
+            placeholder="Enter email">
+          </lib-v-input>
+
+          <div class="form-section">
+            <h4>Assign Roles</h4>
+            <div class="roles-list">
+              <div *ngFor="let role of roles" class="role-item">
+                <label>
+                  <input
+                    type="checkbox"
+                    [checked]="isRoleSelected(role.id)"
+                    (change)="onRoleToggle(role.id, $any($event.target).checked)"
+                  />
+                  <span class="role-name">{{ role.name }}</span>
+                  <span class="role-description">{{ role.description }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-panel-actions">
+            <lib-v-button type="button" variant="secondary" (click)="closeEditPanel()">
+              Cancel
+            </lib-v-button>
+            <lib-v-button type="submit" variant="primary" [disabled]="loading">
+              Save Changes
+            </lib-v-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="v-table-container">
+  <div *ngIf="loading" class="v-table-loading">
+    <span>Loading...</span>
+  </div>
+
+  <table *ngIf="!loading && data.length > 0" class="v-table">
+    <thead>
+      <tr>
+        <th 
+          *ngFor="let column of columns"
+          [style.width]="column.width"
+          [class.sortable]="column.sortable"
+          (click)="onSort(column)">
+          {{ column.label }}
+          <span *ngIf="column.sortable && sortColumn === column.key" class="sort-indicator">
+            {{ sortDirection === 'asc' ? '↑' : '↓' }}
+          </span>
+        </th>
+        <th *ngIf="actions.length > 0" class="v-table-actions-header">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data" (click)="onRowClick(row)" class="v-table-row">
+        <td *ngFor="let column of columns">
+          {{ getCellValue(row, column.key) }}
+        </td>
+        <td *ngIf="actions.length > 0" class="v-table-actions">
+          <button
+            *ngFor="let action of actions"
+            [hidden]="!isActionVisible(action, row)"
+            (click)="action.handler(row); $event.stopPropagation()"
+            class="v-table-action-btn"
+            type="button">
+            <span *ngIf="action.icon" class="action-icon">{{ action.icon }}</span>
+            {{ action.label }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && data.length === 0" class="v-table-empty">
+    {{ emptyMessage }}
+  </div>
+</div>

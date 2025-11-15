@@ -1,0 +1,41 @@
+.v-form-field {
+  margin-bottom: 1rem;
+}
+
+.v-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #566a7f;
+}
+
+.v-form-control {
+  width: 100%;
+  padding: 0.4375rem 0.875rem;
+  font-size: 0.9375rem;
+  border: 1px solid #d9dee3;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: #696cff;
+  }
+  
+  &:disabled {
+    background-color: #eceef1;
+    cursor: not-allowed;
+  }
+  
+  &.v-input-error {
+    border-color: #ff3e1d;
+  }
+}
+
+.v-form-error {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #ff3e1d;
+}

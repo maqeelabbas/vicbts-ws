@@ -1,0 +1,175 @@
+// SCSS Mixins - Design System Utilities
+// ======================================
+
+@import 'spacing';
+@import 'typography';
+@import 'radius';
+
+// Fluid Typography Mixin
+// Scales font-size smoothly between min and max viewport widths
+@mixin fluid-type($min-font-size, $max-font-size, $min-vw: 320px, $max-vw: 1920px) {
+  font-size: $min-font-size;
+
+  @media screen and (min-width: $min-vw) {
+    font-size: calc(
+      #{$min-font-size} + 
+      (#{strip-unit($max-font-size)} - #{strip-unit($min-font-size)}) * 
+      ((100vw - #{$min-vw}) / (#{strip-unit($max-vw)} - #{strip-unit($min-vw)}))
+    );
+  }
+
+  @media screen and (min-width: $max-vw) {
+    font-size: $max-font-size;
+  }
+}
+
+// Helper function to strip units from values
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// Responsive Spacing Mixin
+// Applies different spacing values at different breakpoints
+@mixin responsive-spacing($property, $mobile, $tablet, $desktop) {
+  #{$property}: $mobile;
+
+  @media (min-width: 768px) {
+    #{$property}: $tablet;
+  }
+
+  @media (min-width: 1200px) {
+    #{$property}: $desktop;
+  }
+}
+
+// Section Padding Mixin
+// Matches template section-py pattern
+@mixin section-padding() {
+  padding-top: $section-padding-y-sm;
+  padding-bottom: $section-padding-y-sm;
+
+  @media (min-width: 768px) {
+    padding-top: $section-padding-y-md;
+    padding-bottom: $section-padding-y-md;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: $section-padding-y;
+    padding-bottom: $section-padding-y;
+  }
+}
+
+// Container Mixin
+@mixin container($max-width: 1200px) {
+  width: 100%;
+  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  @media (min-width: 768px) {
+    padding-left: $container-padding-md;
+    padding-right: $container-padding-md;
+  }
+
+  @media (min-width: 1200px) {
+    padding-left: $container-padding-lg;
+    padding-right: $container-padding-lg;
+  }
+}
+
+// Flexbox Center Mixin
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Absolute Center Mixin
+@mixin absolute-center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Truncate Text Mixin
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Focus Styles Mixin
+@mixin focus-ring($color: var(--color-primary-500), $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}
+
+// Media Query Mixins
+@mixin mobile-only {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+// Section Title Mixin (matching template pattern)
+@mixin section-title() {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+
+  .section-title-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.125rem;
+    height: 5.125rem;
+    margin-bottom: $spacing-lg;
+    border-radius: $radius-full;
+  }
+
+  h2 {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+
+    @include mobile-only {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  p {
+    font-size: $font-size-lg;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

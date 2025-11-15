@@ -1,0 +1,46 @@
+// Radius Tokens - Based on Materialize Template
+// ==============================================
+
+// Border Radius Scale
+$radius-none: 0;
+$radius-xs: 0.125rem; // 2px
+$radius-sm: 0.25rem; // 4px
+$radius-base: 0.375rem; // 6px
+$radius-md: 0.5rem; // 8px
+$radius-lg: 0.75rem; // 12px
+$radius-xl: 1rem; // 16px
+$radius-2xl: 1.5rem; // 24px
+$radius-3xl: 2rem; // 32px
+$radius-full: 50rem; // Circular
+$radius-pill: 9999px; // Pill shape
+
+// Component Radii
+$radius-button: $radius-md;
+$radius-card: $radius-xl;
+$radius-input: $radius-base;
+$radius-badge: $radius-full;
+$radius-modal: $radius-xl;
+$radius-dropdown: $radius-lg;
+$radius-tooltip: $radius-sm;
+
+// CSS Variables
+:root {
+  --radius-xs: #{$radius-xs};
+  --radius-sm: #{$radius-sm};
+  --radius-base: #{$radius-base};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-2xl: #{$radius-2xl};
+  --radius-3xl: #{$radius-3xl};
+  --radius-full: #{$radius-full};
+  --radius-pill: #{$radius-pill};
+
+  --radius-button: #{$radius-button};
+  --radius-card: #{$radius-card};
+  --radius-input: #{$radius-input};
+  --radius-badge: #{$radius-badge};
+  --radius-modal: #{$radius-modal};
+  --radius-dropdown: #{$radius-dropdown};
+  --radius-tooltip: #{$radius-tooltip};
+}

@@ -22,7 +22,12 @@
             "input": "apps/public-web/public"
           }
         ],
-        "styles": ["apps/public-web/src/styles.scss"]
+        "styles": ["apps/public-web/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "libs/shared/ui/src/lib"
+          ]
+        }
       },
       "configurations": {
         "production": {
@@ -59,10 +64,14 @@
           "buildTarget": "public-web:build:production"
         },
         "development": {
-          "buildTarget": "public-web:build:development"
+          "buildTarget": "public-web:build:development",
+          "proxyConfig": "apps/public-web/proxy.conf.json"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/public-web/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

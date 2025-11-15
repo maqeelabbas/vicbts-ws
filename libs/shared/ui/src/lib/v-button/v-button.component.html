@@ -1,0 +1,9 @@
+<button
+  [type]="type"
+  [disabled]="disabled"
+  [class.v-btn-primary]="variant === 'primary'"
+  [class.v-btn-secondary]="variant === 'secondary'"
+  [class.v-btn-full-width]="fullWidth"
+  class="v-btn">
+  <ng-content></ng-content>
+</button>

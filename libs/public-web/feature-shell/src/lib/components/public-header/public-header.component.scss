@@ -1,0 +1,195 @@
+@import '../../../../../../shared/ui/src/lib/theme/theme';
+@import '../../../../../../shared/ui/src/lib/theme/mixins';
+
+.public-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: var(--elevation-navbar);
+  transition: box-shadow 0.3s ease;
+
+  .header-container {
+    @include container();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--color-gray-100);
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+
+  .brand-logo-img {
+    height: 38px;
+    width: auto;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary-600);
+
+    svg {
+      width: 38px;
+      height: 20px;
+    }
+  }
+
+  .brand-text {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+  }
+
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: var(--elevation-md);
+    padding: var(--spacing-lg);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+
+    &.open {
+      display: flex;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-2xl);
+      position: static;
+      box-shadow: none;
+      padding: 0;
+      max-height: none;
+      overflow-y: visible;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include desktop {
+      flex-direction: row;
+      gap: var(--spacing-xl);
+    }
+  }
+
+  .nav-item a {
+    display: block;
+    padding: var(--spacing-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--color-primary-600);
+      background-color: var(--color-primary-50);
+    }
+
+    &.active {
+      color: var(--color-primary-600);
+      background-color: var(--color-primary-50);
+    }
+
+    @include desktop {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+  }
+
+  .nav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-light);
+
+    @include desktop {
+      flex-direction: row;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-button);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &-outline {
+      background-color: transparent;
+      color: var(--color-primary-600);
+      border: 2px solid var(--color-primary-600);
+
+      &:hover {
+        background-color: var(--color-primary-50);
+      }
+    }
+
+    &-primary {
+      background-color: var(--color-primary-600);
+      color: white;
+      border: 2px solid var(--color-primary-600);
+
+      &:hover {
+        background-color: var(--color-primary-700);
+        border-color: var(--color-primary-700);
+        box-shadow: var(--elevation-button-hover);
+      }
+    }
+  }
+}

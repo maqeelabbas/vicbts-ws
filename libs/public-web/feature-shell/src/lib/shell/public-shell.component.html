@@ -1,0 +1,9 @@
+<div class="public-shell" *ngIf="isThemeLoaded" [@fadeIn]>
+  <lib-public-header></lib-public-header>
+  
+  <main class="main-content" [@routeAnimations]="outlet.isActivated ? outlet.activatedRoute : ''">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </main>
+  
+  <lib-public-footer></lib-public-footer>
+</div>

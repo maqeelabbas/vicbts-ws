@@ -14,7 +14,56 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@vicbts/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@vicbts/shared/util": ["libs/shared/util/src/index.ts"],
+      "@vicbts/shared/models": ["libs/shared/models/src/index.ts"],
+      "@vicbts/shared/data-access/api": [
+        "libs/shared/data-access/api/src/index.ts"
+      ],
+      "@vicbts/shared/data-access/auth": [
+        "libs/shared/data-access/auth/src/index.ts"
+      ],
+      "@vicbts/shared/data-access/config": [
+        "libs/shared/data-access/config/src/index.ts"
+      ],
+      "@vicbts/shared/data-access/notifications": [
+        "libs/shared/data-access/notifications/src/index.ts"
+      ],
+      "@vicbts/identity/data-access": [
+        "libs/identity/data-access/src/index.ts"
+      ],
+      "@vicbts/identity/feature-user-management": [
+        "libs/identity/feature-user-management/src/index.ts"
+      ],
+      "@vicbts/public-web/feature-shell": [
+        "libs/public-web/feature-shell/src/index.ts"
+      ],
+      "@vic-bts-ws/ui": ["libs/shared/ui/src/index.ts"],
+      "@vic-bts-ws/util": ["libs/shared/util/src/index.ts"],
+      "@vic-bts-ws/models": ["libs/shared/models/src/index.ts"],
+      "@vic-bts-ws/data-access-api": [
+        "libs/shared/data-access/api/src/index.ts"
+      ],
+      "@vic-bts-ws/data-access-auth": [
+        "libs/shared/data-access/auth/src/index.ts"
+      ],
+      "@vic-bts-ws/data-access-config": [
+        "libs/shared/data-access/config/src/index.ts"
+      ],
+      "@vic-bts-ws/data-access-notifications": [
+        "libs/shared/data-access/notifications/src/index.ts"
+      ],
+      "@vic-bts-ws/identity-data-access": [
+        "libs/identity/data-access/src/index.ts"
+      ],
+      "@vic-bts-ws/feature-user-management": [
+        "libs/identity/feature-user-management/src/index.ts"
+      ],
+      "@vic-bts-ws/feature-shell": [
+        "libs/public-web/feature-shell/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

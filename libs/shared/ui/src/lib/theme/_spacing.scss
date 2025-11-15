@@ -1,0 +1,62 @@
+// Spacing Tokens - Based on Materialize Template
+// ================================================
+
+// Base unit: 4px (0.25rem)
+$spacing-base: 0.25rem; // 4px
+
+// Spacing Scale
+$spacing-0: 0;
+$spacing-1: $spacing-base * 1; // 4px
+$spacing-2: $spacing-base * 2; // 8px
+$spacing-3: $spacing-base * 3; // 12px
+$spacing-4: $spacing-base * 4; // 16px
+$spacing-5: $spacing-base * 5; // 20px
+$spacing-6: $spacing-base * 6; // 24px
+$spacing-7: $spacing-base * 7; // 28px
+$spacing-8: $spacing-base * 8; // 32px
+$spacing-10: $spacing-base * 10; // 40px
+$spacing-12: $spacing-base * 12; // 48px
+$spacing-16: $spacing-base * 16; // 64px
+$spacing-20: $spacing-base * 20; // 80px
+$spacing-24: $spacing-base * 24; // 96px
+$spacing-32: $spacing-base * 32; // 128px
+
+// Named Spacing
+$spacing-xs: $spacing-2; // 8px
+$spacing-sm: $spacing-4; // 16px
+$spacing-md: $spacing-6; // 24px
+$spacing-lg: $spacing-8; // 32px
+$spacing-xl: $spacing-12; // 48px
+$spacing-2xl: $spacing-16; // 64px
+$spacing-3xl: $spacing-24; // 96px
+
+// Section Padding (matching template section-py)
+$section-padding-y: 6.25rem; // 100px
+$section-padding-y-md: 5rem; // 80px
+$section-padding-y-sm: 3rem; // 48px
+
+// Container Padding
+$container-padding: 1rem; // 16px
+$container-padding-md: 2rem; // 32px
+$container-padding-lg: 4rem; // 64px
+
+// Gap Scale
+$gap-xs: $spacing-2;
+$gap-sm: $spacing-4;
+$gap-md: $spacing-6;
+$gap-lg: $spacing-8;
+$gap-xl: $spacing-12;
+
+// CSS Variables
+:root {
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+  --spacing-2xl: #{$spacing-2xl};
+  --spacing-3xl: #{$spacing-3xl};
+
+  --section-padding-y: #{$section-padding-y};
+  --container-padding: #{$container-padding};
+}

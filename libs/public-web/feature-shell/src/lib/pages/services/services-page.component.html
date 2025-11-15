@@ -1,0 +1,35 @@
+<div class="services-page">
+  <section class="page-hero">
+    <lib-page-container>
+      <v-section-title
+        title="Our Services"
+        description="Comprehensive solutions designed to accelerate your digital transformation"
+        icon="ri-briefcase-fill">
+      </v-section-title>
+    </lib-page-container>
+  </section>
+
+  <lib-services-section></lib-services-section>
+
+  <section class="additional-services">
+    <v-feature-section
+      sectionTitle="Core Development Services"
+      sectionDescription="Expert development teams ready to build your vision"
+      sectionIcon="ri-code-box-fill"
+      [features]="coreServices"
+      [columns]="3">
+    </v-feature-section>
+  </section>
+
+  <section class="support-services">
+    <v-feature-section
+      sectionTitle="Support & Maintenance"
+      sectionDescription="Comprehensive support to keep your systems running at peak performance"
+      sectionIcon="ri-tools-fill"
+      [features]="supportServices"
+      [columns]="3">
+    </v-feature-section>
+  </section>
+
+  <lib-contact-cta></lib-contact-cta>
+</div>
